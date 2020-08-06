@@ -12,6 +12,7 @@ import {MomentPipe} from "./shared/moment.pipe";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from "@angular/material/table";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -28,6 +29,8 @@ import {MatTableModule} from "@angular/material/table";
     BrowserAnimationsModule,
     MatIconModule,
     MatTableModule,
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   providers: [],

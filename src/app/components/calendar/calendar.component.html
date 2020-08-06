@@ -2,36 +2,100 @@
 
   <ng-container matColumnDef="Sun">
     <mat-header-cell  *matHeaderCellDef mat-sort-header>Sunday</mat-header-cell>
-    <mat-cell disabled="element.days[0].disabled" *matCellDef="let element">{{element.days[0].value | moment: 'ddd DD'}}</mat-cell>
+    <mat-cell (click)="select(element.days[0].value)" disabled="element.days[0].disabled" *matCellDef="let element">
+       <span
+           [class.selected]="element.days[0].selected"
+           [class.active]="element.days[0].active"
+           [class.disabled]="element.days[0].disabled"
+         >
+        {{element.days[0].value | moment: 'ddd DD'}}
+  <!--      {{!element.days[0].disabled ? (element.days[0].value | moment: 'ddd DD') : '&#45;&#45;'}}-->
+       </span>
+    </mat-cell>
   </ng-container>
   <ng-container matColumnDef="Mon">
     <mat-header-cell *matHeaderCellDef  mat-sort-header>Monday</mat-header-cell>
-    <mat-cell [style]="element.days[1].disabled ? " *matCellDef="let element">
-<!--      {{element.days[1].value | moment: 'ddd DD'}}-->
-      <mat-icon *ngIf="!element.days[1].disabled">get_app</mat-icon>
+    <mat-cell (click)="select(element.days[1].value)"  *matCellDef="let element" >
+      <span
+        [class.selected]="element.days[1].selected"
+        [class.active]="element.days[1].active"
+        [class.disabled]="element.days[1].disabled"
+      >
+        {{ element.days[1].value | moment: 'ddd DD'}}
+      </span>
+<!--      <mat-icon *ngIf="!element.days[1].disabled">get_app</mat-icon>-->
     </mat-cell>
 
   </ng-container>
   <ng-container matColumnDef="Tue">
     <mat-header-cell *matHeaderCellDef  mat-sort-header>Tuesday</mat-header-cell>
-    <mat-cell disabled="element.days[2].disabled" *matCellDef="let element">{{element.days[2].value | moment: 'ddd DD'}}</mat-cell>
+    <mat-cell  (click)="select(element.days[2].value)"  *matCellDef="let element" >
+      <span
+        [class.selected]="element.days[2].selected"
+        [class.active]="element.days[2].active"
+        [class.disabled]="element.days[2].disabled"
+      >
+        {{ element.days[2].value | moment: 'ddd DD'}}
+      </span>
+    </mat-cell>
+
   </ng-container>
   <ng-container matColumnDef="Wed">
     <mat-header-cell *matHeaderCellDef  mat-sort-header>Wednesday</mat-header-cell>
-    <mat-cell disabled="element.days[3].disabled" *matCellDef="let element">{{element.days[3].value | moment: 'ddd DD'}}</mat-cell>
+    <mat-cell (click)="select(element.days[3].value)"  *matCellDef="let element" >
+      <span
+        [class.disabled]="element.days[3].disabled"
+        [class.selected]="element.days[3].selected"
+        [class.active]="element.days[3].active"
+      >
+        {{ element.days[3].value | moment: 'ddd DD'}}
+      </span>
+    </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="Thu">
     <mat-header-cell *matHeaderCellDef  mat-sort-header>Thursday</mat-header-cell>
-    <mat-cell disabled="element.days[4].disabled" *matCellDef="let element">{{element.days[4].value | moment: 'ddd DD'}}</mat-cell>
+    <mat-cell  (click)="select(element.days[4].value)" *matCellDef="let element" >
+      <span
+        [class.selected]="element.days[4].selected"
+        [class.active]="element.days[4].active"
+        [class.disabled]="element.days[4].disabled"
+      >
+        {{ element.days[4].value | moment: 'ddd DD'}}
+      </span>
+      <!--      <mat-icon *ngIf="!element.days[1].disabled">get_app</mat-icon>-->
+    </mat-cell>
+
+<!--    <mat-cell disabled="element.days[4].disabled" *matCellDef="let element">-->
+<!--&lt;!&ndash;      {{element.days[4].value | moment: 'ddd DD'}}&ndash;&gt;-->
+<!--      {{!element.days[4].disabled ? (element.days[4].value | moment: 'ddd DD') : '&#45;&#45;'}}-->
+<!--    </mat-cell>-->
   </ng-container>
   <ng-container matColumnDef="Fri">
     <mat-header-cell *matHeaderCellDef  mat-sort-header>Friday</mat-header-cell>
-    <mat-cell disabled="element.days[5].disabled" *matCellDef="let element">{{element.days[5].value | moment: 'ddd DD'}}</mat-cell>
+    <mat-cell (click)="select(element.days[5].value)"  *matCellDef="let element" >
+      <span
+        [class.selected]="element.days[5].selected"
+        [class.active]="element.days[5].active"
+        [class.disabled]="element.days[5].disabled"
+      >
+        {{ element.days[5].value | moment: 'ddd DD'}}
+      </span>
+      <!--      <mat-icon *ngIf="!element.days[1].disabled">get_app</mat-icon>-->
+    </mat-cell>
   </ng-container>
   <ng-container matColumnDef="Sat">
     <mat-header-cell *matHeaderCellDef  mat-sort-header>Saturday</mat-header-cell>
-    <mat-cell disabled="element.days[6].disabled" *matCellDef="let element">{{element.days[6].value | moment: 'ddd DD'}}</mat-cell>
+    <mat-cell  (click)="select(element.days[6].value)" *matCellDef="let element" >
+      <span
+        [class.selected]="element.days[6].selected"
+        [class.active]="element.days[6].active"
+        [class.disabled]="element.days[6].disabled"
+      >
+        {{ element.days[6].value | moment: 'ddd DD'}}
+      </span>
+      <!--      <mat-icon *ngIf="!element.days[1].disabled">get_app</mat-icon>-->
+    </mat-cell>
   </ng-container>
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

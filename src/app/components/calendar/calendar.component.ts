@@ -59,5 +59,8 @@ export class CalendarComponent implements OnInit {
     console.log(  this.listData)
 
   }
+  select(day: moment.Moment){
+    this.dateService.changeDate(day);
+}
 
 }

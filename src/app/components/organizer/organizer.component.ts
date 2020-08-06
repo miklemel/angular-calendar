@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {DateService} from "../../shared/date.service";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-organizer',
@@ -6,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./organizer.component.scss']
 })
 export class OrganizerComponent implements OnInit {
-
-  constructor() { }
+  form: FormGroup
+  constructor(public dateService: DateService) { }
 
   ngOnInit(): void {
+    this.form = new FormGroup({
+      title: new FormControl('', Validators.required)
+    })
   }
 
+  submit(){
+    const {title} = this.form.value;
+
+    const task = {
+      title,
+      date: this.dateService.date.value.format('DD-MM-YYYY')
+    }
+  }
 }
